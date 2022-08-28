@@ -42,3 +42,71 @@ export default function Document() {
   )
 }
 ```
+
+## 3. Streamline configuration
+Setup `tsconfig.json` to make path coding more streamlined
+```
+//jsconfig.json
+{
+  "compilerOptions": {
+    ...
+
+    "baseUrl": ".",
+    "paths": {
+      "@/src/*": ["src/*"]
+    }
+  }
+}
+```
+
+## 4. Start building basic page scaffold
+Create `page/page-1.tsx`
+```
+import type { NextPage } from 'next'
+
+const Page1: NextPage = () => {
+  return (
+    <div>Page 1</div>
+  )
+}
+
+export default Page1
+```
+
+## 5. Switch to Saas styline
+Install SaaS
+```
+yarn add sass@1.51.0
+```
+
+Switch to Sass styling. 
+
+In the `styles` folder change `Home.module.css` and `globals.css` to be `.scss` filename.
+Update the style import reference in `index.tsx` and `_app.tsx`.
+
+Update `next.config.js` to compile in Sass:
+```
+/** @type {import('next').NextConfig} */
+const path = require('path')
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+}
+
+module.exports = nextConfig
+```
+
+
+
+## 6. Organise with components
+Add in components
+
+```
+--src
+    --components
+        --Widget
+
