@@ -1,8 +1,10 @@
-import type { NextPage } from 'next'
+import Layout from '@/src/components/Layout/Layout';
 
-const Page1: NextPage = () => {
+const Page1 = () => {
   return (
-    <div>Page 1</div>
+    <Layout title="Page One">
+      <p>page one</p>
+  </Layout>
   )
 }
 
